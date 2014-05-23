@@ -29,8 +29,9 @@ abstract class ControllerBase {
     /**
      * Handle the command.
      *
+     * @param Twig\Twig_Environment $templateEngine Template engine instance.
      * @param array $params Controller's parameters.
      */
-    public abstract function handle($params = null);
+    public abstract function handle($templateEngine, $params = null);
 
 }

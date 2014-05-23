@@ -25,6 +25,14 @@ use ProjetWeb\Controllers\MainPageController;
 use ProjetWeb\Controllers\ErrorPageController;
 use ProjetWeb\Controllers\ProductDetailsController;
 
+/* Twig setup */
+$loader = new Twig_Loader_Filesystem(__DIR__ . '/web/templates');
+$twig = new Twig_Environment($loader, array(
+    // 'cache' => __DIR__ . '/cache',
+    'cache' => false,
+));
+$twig->addGlobal('baseUrl', BASE_URL);
+
 /* Get the URL path */
 $requestUrl = $_SERVER['REQUEST_URI'];
 
@@ -62,4 +70,4 @@ switch ($tokens[0]) {
 
 /* Do the job */
 array_shift($tokens);
-$handler->handle($tokens);
+$handler->handle($twig, $tokens);

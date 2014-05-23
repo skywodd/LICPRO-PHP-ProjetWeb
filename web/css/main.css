@@ -1,63 +1,58 @@
 /*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
     Created on : 16 mai 2014, 11:43:00
     Author     : Linkdelaudela
 */
 
 #wrapper {
-	width:650px;
-	margin: 0 auto 0 auto;
-        
+    width:650px;
+    margin: 0 auto 0 auto;
+
 }
 /*
 #wrapper>nav {
-	padding:1em;
-	border:1px dashed #444;
-	margin-top:1em;
+        padding:1em;
+        border:1px dashed #444;
+        margin-top:1em;
 }*/
 
 
 
 #main {
-	float:left;
-	width:750px;
-    display:block; 
-    margin-left:auto; 
-    margin-right:auto; 
+    float:left;
+    width:750px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 footer {
-	clear:both;
+    clear:both;
 }
 
 aside {
-	border:1px dashed #444;
+    border:1px dashed #444;
 }
 
 #sidebar {
-	float:left;
-	width:22%;
-	margin-left:1%;
-	margin-top:1em;
+    float:left;
+    width:22%;
+    margin-left:1%;
+    margin-top:1em;
 }
 
 .header {
-    display:block; 
+    display:block;
     width:200px;
-    margin-left:auto; 
-    margin-right:auto; 
+    margin-left:auto;
+    margin-right:auto;
     margin-bottom: 50px;
 
 }
 .nav{
-    
-    display:block; 
-    margin-left:auto; 
-    margin-right:auto; 
+
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
     margin-bottom: 50px;
     width:500px;
     padding:0;
@@ -98,31 +93,31 @@ aside {
 
 div.img
 {
-  margin:5px;
-  padding: 5px;
-  border:1px solid #0000ff;
-  height:auto;
-  width:auto;
-  float:left;
-  text-align:center;
+    margin:5px;
+    padding: 5px;
+    border:1px solid #0000ff;
+    height:auto;
+    width:auto;
+    float:left;
+    text-align:center;
 }
 
 div.img img
 {
-  display:inline;
-  margin:5px;
-  border:1px solid #ffffff;
+    display:inline;
+    margin:5px;
+    border:1px solid #ffffff;
 }
 
 div.img a:hover img
 {
-  border:1px solid #0000ff;
+    border:1px solid #0000ff;
 }
 
 div.desc
 {
-  text-align:center;
-  font-weight:normal;
-  width:120px;
-  margin:5px;
+    text-align:center;
+    font-weight:normal;
+    width:120px;
+    margin:5px;
 }

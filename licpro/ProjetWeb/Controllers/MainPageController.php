@@ -19,6 +19,8 @@
 
 namespace ProjetWeb\Controllers;
 
+use ProjetWeb\Models\Product;
+
 /**
  * Description of Controller
  *
@@ -26,10 +28,21 @@ namespace ProjetWeb\Controllers;
  */
 class MainPageController extends ControllerBase {
 
-    public function handle($params = null) {
-        echo 'Suck main page, much text, very complexe, Wow.';
+    public function handle($templateEngine, $params = null) {
+
+        $products = [
+            new Product('Nom', 1.0, 1, 'Description', 1, 1),
+            new Product('Nom', 1.0, 1, 'Description', 1, 1),
+            new Product('Nom', 1.0, 1, 'Description', 1, 1),
+            new Product('Nom', 1.0, 1, 'Description', 1, 1),
+            new Product('Nom', 1.0, 1, 'Description', 1, 1),
+            new Product('Nom', 1.0, 1, 'Description', 1, 1),
+            new Product('Nom', 1.0, 1, 'Description', 1, 1),
+            new Product('Nom', 1.0, 1, 'Description', 1, 1)
+        ];
+
+        $template = $templateEngine->loadTemplate('index.html');
+        echo $template->render(array('pageTitle' => 'DriveCommunautaire', 'products' => $products));
     }
 
 }
-
-?>

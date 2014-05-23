@@ -19,6 +19,8 @@
 
 namespace ProjetWeb\Controllers;
 
+use ProjetWeb\Models\Product;
+
 /**
  * Description of Controller
  *
@@ -26,10 +28,10 @@ namespace ProjetWeb\Controllers;
  */
 class ProductDetailsController extends ControllerBase {
 
-    public function handle($params = null) {
-        echo 'swag product';
+    public function handle($templateEngine, $params = null) {
+        $product = new Product('Nom', 1.0, 1, 'Description', 1, 1);
+        $template = $templateEngine->loadTemplate('productDetails.html');
+        echo $template->render(array('pageTitle' => 'DriveCommunautaire', 'product' => $product));
     }
 
 }
-
-?>

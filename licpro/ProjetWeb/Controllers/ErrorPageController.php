@@ -26,10 +26,8 @@ namespace ProjetWeb\Controllers;
  */
 class ErrorPageController extends ControllerBase {
 
-    public function handle($params = null) {
-        echo 'error kisama';
+    public function handle($templateEngine, $params = null) {
+        echo 'error page';
     }
 
 }
-
-?>
