@@ -29,20 +29,12 @@ footer {
     clear:both;
 }
 
-aside {
-    border:1px dashed #444;
-}
 
-#sidebar {
-    float:left;
-    width:22%;
-    margin-left:1%;
-    margin-top:1em;
-}
+
 
 .header {
     display:block;
-    width:200px;
+    width:0px;
     margin-left:auto;
     margin-right:auto;
     margin-bottom: 50px;
