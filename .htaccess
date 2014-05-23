@@ -1,0 +1,25 @@
+## Apache configuration
+##
+
+# UTF-8 for all
+AddDefaultCharset UTF-8
+php_flag default_charset utf-8
+
+# Avoid access to unsecure htaccess files
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+
+# Index file
+DirectoryIndex index.php
+
+# No indexes for all files
+Options -Indexes
+
+## URL rewrite rules for user-friendly url
+##
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php
