@@ -1,17 +1,23 @@
 {% extends "base.html" %}
 
 {% block mainContent %}
+<article class="articleProduct">
+    
+    <div class="imgProduct">
+    <h2>{{ product.name }}</h2>
+        <a target="_blank" href="#">
+            <h1>Vendeur(Type)</h1>
+        </a>
 
-    <h1>{{ product.name }}</h1>
+        <img class="resize" src="{{ baseUrl }}/web/img/product-{{ product.id }}.jpg" alt="{{ product.name }}" width="550" height="450">
 
-    <a target="_blank" href="#">
-        <h2>Vendeur(Type)</h2>
-    </a>
-
-    <img src="{{ baseUrl }}/web/img/product-{{ product.id }}.jpg" alt="{{ product.name }}" width="550" height="450">
-
-    <p> Quantité : {{ product.quantity }}</p>
-    <p> Prix : {{ product.price }} €</p>
-    <p>Description : {{ product.description }} </p>
+            <div class="desc">
+                <p> Quantité : {{ product.quantity }}</p>
+                <p> Prix : {{ product.price }} €</p>
+                <p>Description : {{ product.description }} </p>
+            </div>
+    </div>
+    
+</article>
 
 {% endblock %}

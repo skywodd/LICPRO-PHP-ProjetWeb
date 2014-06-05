@@ -23,4 +23,4 @@ define('DATABASE_PASSWORD', '');
 /**
  * Base URL of the project.
  */
-define('BASE_URL', '/LICPRO-PHP-ProjetWeb');
+define('BASE_URL', '/licpro-php-projetweb');

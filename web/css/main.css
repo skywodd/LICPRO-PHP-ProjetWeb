@@ -3,17 +3,124 @@
     Author     : Linkdelaudela
 */
 
-#wrapper {
-    width:650px;
-    margin: 0 auto 0 auto;
-
+/*media queries*/
+@media only screen and (min-width: 100px) and (max-width: 432px) {
+img{
+    width:90%; /* you can use % */
+    height: auto;
 }
-/*
-#wrapper>nav {
-        padding:1em;
-        border:1px dashed #444;
-        margin-top:1em;
-}*/
+article {
+    
+  display: -webkit-flex;
+  margin: 10px;
+  width: 400px;
+  -webkit-align-items: start;
+      
+}
+
+div.img
+{
+    border:1px solid #7A991A;
+    width:430px;
+    text-align:center;
+}
+
+div.img img
+{
+    display:inline;
+    margin:5px;
+    border:1px solid #ffffff;
+}
+}
+
+@media only screen and (min-width: 433px) and (max-width: 480px) { 
+    img{
+    width:50%; /* you can use % */
+    height: auto;
+}
+article {
+    
+  display: -webkit-flex;
+  margin: 10px;
+  width: 180px;
+  -webkit-align-items: start;
+      
+}
+
+div.img
+{
+    border:1px solid #7A991A;
+    width:200px;
+    text-align:center;
+}
+
+div.img img
+{
+    display:inline;
+    margin:5px;
+    border:1px solid #ffffff;
+}
+
+} /* Narrow */
+
+@media only screen and (min-width: 481px) and (max-width: 960px) {
+
+    nav {
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: space-between;
+}
+
+
+} /* Medium */
+
+@media only screen and (min-width: 961px) { 
+
+
+
+
+} /* Wide */
+
+section {
+  display: -webkit-flex;
+  -webkit-flex-wrap: wrap;
+  -webkit-align-items: flex-start;
+}
+
+article {
+    
+  display: -webkit-flex;
+  margin: 10px;
+  -webkit-align-items: start;
+}
+
+.articleProduct {
+   -webkit-order: 0;
+   width:2000px;
+  margin: 10px;
+    display: -webkit-flex;
+    -webkit-justify-content: space-around;
+}
+
+article:nth-child(odd) {
+  -webkit-flex-direction: row;
+}
+article:nth-child(even) {
+  -webkit-flex-direction: row;
+}
+body{
+    background-image: url("../img/imgFond.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top right;
+	background-attachment: fixed;
+}
+
+.wrapper {
+    
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+}
 
 
 
@@ -24,30 +131,44 @@
     margin-left:auto;
     margin-right:auto;
 }
-
+img.resize{
+    width:50%; /* you can use % */
+    height: auto;
+}
 footer {
     clear:both;
 }
 
 
-
-
-.header {
-    display:block;
-    width:0px;
-    margin-left:auto;
-    margin-right:auto;
-    margin-bottom: 50px;
-
+a{
+  color:  #FFFFFF;
 }
+
+a:hover{
+  color:  #7A991A;
+}
+header {
+    
+    -webkit-order: 0;
+    display: -webkit-flex;
+    -webkit-justify-content: space-around;
+  
+}
+
+footer {
+    
+    -webkit-order: 999;
+    display: -webkit-flex;
+    -webkit-justify-content: space-around;
+  
+}
+
 .nav{
 
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
-    margin-bottom: 50px;
-    width:500px;
-    padding:0;
+    -webkit-order: 0;
+    display: -webkit-flex;
+    -webkit-justify-content: space-around;
+  
 }
 .nav ul{
     text-align:center;
@@ -85,12 +206,13 @@ footer {
 
 div.img
 {
-    margin:5px;
-    padding: 5px;
-    border:1px solid #0000ff;
-    height:auto;
-    width:auto;
-    float:left;
+    border:1px solid #7A991A;
+
+    text-align:center;
+}
+
+div.imgProduct
+{
     text-align:center;
 }
 
@@ -110,6 +232,5 @@ div.desc
 {
     text-align:center;
     font-weight:normal;
-    width:120px;
-    margin:5px;
+   
 }
