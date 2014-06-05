@@ -1,4 +1,10 @@
-LICPRO-PHP-ProjetWeb
+# LICPRO-PHP-ProjetWeb
+## By Fabien Batteix and Dimitri Pireyre
 ====================
 
-Totally useless project for school, don't clone it and move on.
+Apache mod required :
++ mod_rewrite
+
+---
+
+SQL dump and tables structures are provided in the doc/ directory.
