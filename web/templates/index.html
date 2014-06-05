@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 
 {% block mainContent %}
+        <section >
     {% for product in products %}
-    <article>
+    <article class="productList">
         <div class="img">
             <a target="_blank" href="{{ baseUrl }}/product/{{ product.id }}">
             <h1>{{ product.name }}</h1>
@@ -15,4 +16,5 @@
     </article>
     {% endfor %}
 
+        </section>
 {% endblock %}
