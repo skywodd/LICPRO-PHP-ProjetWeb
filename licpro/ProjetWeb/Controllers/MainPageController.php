@@ -19,7 +19,8 @@
 
 namespace ProjetWeb\Controllers;
 
-use ProjetWeb\Models\Product;
+//use ProjetWeb\Models\Product;
+use ProjetWeb\Database\ProductAccessLayer;
 
 /**
  * Description of Controller
@@ -30,7 +31,8 @@ class MainPageController extends ControllerBase {
 
     public function handle($templateEngine, $params = null) {
 
-        $products = [
+        $products = ProductAccessLayer::getProducts(30);
+        /*[
             new Product('Nom', 1.0, 1, 'Description', 1, 1),
             new Product('Nom', 1.0, 1, 'Description', 1, 1),
             new Product('Nom', 1.0, 1, 'Description', 1, 1),
@@ -39,7 +41,7 @@ class MainPageController extends ControllerBase {
             new Product('Nom', 1.0, 1, 'Description', 1, 1),
             new Product('Nom', 1.0, 1, 'Description', 1, 1),
             new Product('Nom', 1.0, 1, 'Description', 1, 1)
-        ];
+        ];*/
 
         $template = $templateEngine->loadTemplate('index.html');
         echo $template->render(array('pageTitle' => 'DriveCommunautaire', 'products' => $products));

@@ -19,8 +19,10 @@
 
 /* Include autoloader */
 require __DIR__ . '/vendor/autoload.php';
-require __DIR__ . '/config/config.php';
+require __DIR__ . '/config/database.php';
+require __DIR__ . '/config/routing.php';
 
+use ProjetWeb\Database\DatabaseConnection;
 use ProjetWeb\Controllers\MainPageController;
 use ProjetWeb\Controllers\ErrorPageController;
 use ProjetWeb\Controllers\ProductDetailsController;
@@ -32,6 +34,9 @@ $twig = new Twig_Environment($loader, array(
     'cache' => false,
 ));
 $twig->addGlobal('baseUrl', BASE_URL);
+
+/* Database connection */
+DatabaseConnection::openDatabase(DATABASE_HOST, DATABASE_USERNAME, DATABASE_PASSWORD, DATABASE_NAME);
 
 /* Get the URL path */
 $requestUrl = $_SERVER['REQUEST_URI'];
@@ -71,3 +76,6 @@ switch ($tokens[0]) {
 /* Do the job */
 array_shift($tokens);
 $handler->handle($twig, $tokens);
+
+/* Close the database connection */
+DatabaseConnection::closeDatabase();
