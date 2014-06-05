@@ -29,7 +29,7 @@ use ProjetWeb\Models\Product;
 class ProductAccessLayer {
 
     public static function getProducts($limit, $from = 0) {
-        
+
         $mysqli = DatabaseConnection::getDatabaseConnexion();
         $res = $mysqli->query('SELECT * FROM Product LIMIT '. intval($from) .  ',' . intval($limit));
         if (!$res) {
@@ -43,6 +43,25 @@ class ProductAccessLayer {
         $res->free();
 
         return $products;
+    }
+
+    public static function getProductById($id) {
+
+        $mysqli = DatabaseConnection::getDatabaseConnexion();
+        $res = $mysqli->query('SELECT * FROM Product WHERE idProduct=' . intval($id));
+        if (!$res) {
+            throw new Exception($mysqli->error, $mysqli->errno);
+        }
+
+        $product = null;
+        
+        $row = $res->fetch_assoc();
+        if($row) {
+            $product = new Product($row['name'], $row['price'], $row['quantity'], $row['description'], $row['idSeller'], $row['idProduct']);
+        }
+        $res->free();
+
+        return $product;
     }
 
 }

@@ -19,7 +19,8 @@
 
 namespace ProjetWeb\Controllers;
 
-use ProjetWeb\Models\Product;
+//use ProjetWeb\Models\Product;
+use ProjetWeb\Database\ProductAccessLayer;
 
 /**
  * Description of Controller
@@ -29,8 +30,11 @@ use ProjetWeb\Models\Product;
 class ProductDetailsController extends ControllerBase {
 
     public function handle($templateEngine, $params = null) {
-        $product = new Product('Nom', 1.0, 1, 'Description', 1, 1);
-        $template = $templateEngine->loadTemplate('productDetails.html');
+        $product = null;
+        if(count($params) == 1) {
+            $product = ProductAccessLayer::getProductById($params[0]); //new Product('Nom', 1.0, 1, 'Description', 1, 1);
+        }
+        $template = $templateEngine->loadTemplate(($product != null) ? 'productDetails.html' : 'productNotFound.html');
         echo $template->render(array('pageTitle' => 'DriveCommunautaire', 'product' => $product));
     }
 
