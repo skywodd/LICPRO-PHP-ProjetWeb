@@ -27,8 +27,9 @@ namespace ProjetWeb\Controllers;
 class ErrorPageController extends ControllerBase {
 
     public function handle($templateEngine, $params = null) {
+        
         $template = $templateEngine->loadTemplate('pageNotFound.html');
-        echo $template->render(array('pageTitle' => 'DriveCommunautaire'));
+        echo $template->render();
     }
 
 }

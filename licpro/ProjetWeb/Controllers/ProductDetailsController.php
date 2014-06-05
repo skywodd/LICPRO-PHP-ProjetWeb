@@ -30,12 +30,13 @@ use ProjetWeb\Database\ProductAccessLayer;
 class ProductDetailsController extends ControllerBase {
 
     public function handle($templateEngine, $params = null) {
+        
         $product = null;
         if(count($params) == 1) {
-            $product = ProductAccessLayer::getProductById($params[0]); //new Product('Nom', 1.0, 1, 'Description', 1, 1);
+            $product = ProductAccessLayer::getProductById($params[0]);
         }
         $template = $templateEngine->loadTemplate(($product != null) ? 'productDetails.html' : 'productNotFound.html');
-        echo $template->render(array('pageTitle' => 'DriveCommunautaire', 'product' => $product));
+        echo $template->render(array('product' => $product));
     }
 
 }
