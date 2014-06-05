@@ -78,16 +78,21 @@ section {
 }
 
 article {
-
+    box-shadow: 1px 1px 12px #555;
+    background-color:white;
+    border-radius: 10px;
     display: flex;
     margin: 10px;
     align-items: start;
 }
 
 .articleProduct {
+    box-shadow: 1px 1px 12px #555;
+    background-color:white;
+    border-radius: 10px;
     order: 0;
     width:2000px;
-    margin: 10px;
+    margin: 15px;
     display: flex;
     justify-content: space-around;
 }
@@ -123,32 +128,29 @@ img.resize{
     width:50%; /* you can use % */
     height: auto;
 }
+
 footer {
     clear:both;
 }
 
-
 a{
-    color:  #FFFFFF;
+    color:  #98bf21;
 }
 
 a:hover{
     color:  #7A991A;
 }
-header {
 
+header {
     order: 0;
     display: flex;
     justify-content: space-around;
-
 }
 
 footer {
-
     order: 999;
     display: flex;
     justify-content: space-around;
-
 }
 
 .nav{
@@ -194,8 +196,8 @@ footer {
 
 div.img
 {
-    border:1px solid #7A991A;
-
+    border:5px solid #7A991A;
+    border-radius: 10px;
     text-align:center;
 }
 
@@ -218,7 +220,15 @@ div.img a:hover img
 
 div.desc
 {
-    text-align:center;
+    z-index:100;
+    font-size:24px;
+    font-weight:bold;
+    left:150px;
+    top:350px;
     font-weight:normal;
 
+}
+
+h1 {
+   margin: 25px; 
 }
