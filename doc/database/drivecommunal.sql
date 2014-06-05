@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 05 Juin 2014 à 19:24
+-- Généré le :  Jeu 05 Juin 2014 à 19:26
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -19,6 +19,25 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `drivecommunal`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `address`
+--
+
+CREATE TABLE IF NOT EXISTS `address` (
+  `idAddress` int(11) NOT NULL AUTO_INCREMENT,
+  `idUser` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `displayName` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `zipCode` int(11) NOT NULL,
+  `phoneNumber` varchar(255) NOT NULL,
+  PRIMARY KEY (`idAddress`),
+  UNIQUE KEY `idAddress_UNIQUE` (`idAddress`),
+  KEY `idUser_FK_idx` (`idUser`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -53,9 +72,41 @@ INSERT INTO `product` (`idProduct`, `name`, `price`, `quantity`, `description`, 
 (7, 'chabli-cendre', '4.31000', 1, 'chabli-cendre', 2),
 (8, 'Faux filets', '6.10000', 1, 'Faux filets', 2);
 
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `user`
+--
+
+CREATE TABLE IF NOT EXISTS `user` (
+  `idUser` int(11) NOT NULL AUTO_INCREMENT,
+  `isSeller` tinyint(1) NOT NULL DEFAULT '0',
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `displayName` varchar(255) NOT NULL,
+  `titleOrGender` varchar(255) NOT NULL,
+  PRIMARY KEY (`idUser`),
+  UNIQUE KEY `email_UNIQUE` (`email`),
+  UNIQUE KEY `idUser_UNIQUE` (`idUser`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Contenu de la table `user`
+--
+
+INSERT INTO `user` (`idUser`, `isSeller`, `email`, `password`, `displayName`, `titleOrGender`) VALUES
+(1, 0, 'buyer1@example.com', 'buyer1', 'Buyer #1', 'Mr.'),
+(2, 1, 'seller1@example.com', 'seller1', 'Seller #1', 'Boucher');
+
 --
 -- Contraintes pour les tables exportées
 --
+
+--
+-- Contraintes pour la table `address`
+--
+ALTER TABLE `address`
+  ADD CONSTRAINT `idUser_FK` FOREIGN KEY (`idUser`) REFERENCES `user` (`idUser`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Contraintes pour la table `product`
