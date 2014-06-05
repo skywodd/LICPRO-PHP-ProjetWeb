@@ -9,9 +9,9 @@
                 <img src="{{ baseUrl }}/web/img/product-{{ product.id }}.jpg" alt="{{ product.name }}" width="110" height="90">
             </a>
 
-            <div class="desc"><p>{{ product.price }} €</p></div>
+            <div class="desc"><p>{{ product.price|number_format(2, '.', '') }} €</p></div>
         </div>
-        
+
     </article>
     {% endfor %}
 
