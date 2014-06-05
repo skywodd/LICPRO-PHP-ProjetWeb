@@ -1,80 +1,70 @@
-/*
-    Created on : 16 mai 2014, 11:43:00
-    Author     : Linkdelaudela
-*/
-
 /*media queries*/
 @media only screen and (min-width: 100px) and (max-width: 432px) {
-img{
-    width:90%; /* you can use % */
-    height: auto;
-}
-article {
-    
-  display: -webkit-flex;
-  margin: 10px;
-  width: 400px;
-  -webkit-align-items: start;
-      
+    img {
+        width:90%; /* you can use % */
+        height: auto;
+    }
+
+    article {
+        display: flex;
+        margin: 10px;
+        width: 400px;
+        align-items: start;
+    }
+
+    div.img {
+        border:1px solid #7A991A;
+        width:430px;
+        text-align:center;
+    }
+
+    div.img img {
+        display:inline;
+        margin:5px;
+        border:1px solid #ffffff;
+    }
 }
 
-div.img
-{
-    border:1px solid #7A991A;
-    width:430px;
-    text-align:center;
-}
+@media only screen and (min-width: 433px) and (max-width: 480px) {
+    img {
+        width:50%; /* you can use % */
+        height: auto;
+    }
 
-div.img img
-{
-    display:inline;
-    margin:5px;
-    border:1px solid #ffffff;
-}
-}
+    article {
+        display: flex;
+        margin: 10px;
+        width: 180px;
+        align-items: start;
+    }
 
-@media only screen and (min-width: 433px) and (max-width: 480px) { 
-    img{
-    width:50%; /* you can use % */
-    height: auto;
-}
-article {
-    
-  display: -webkit-flex;
-  margin: 10px;
-  width: 180px;
-  -webkit-align-items: start;
-      
-}
+    div.img {
+        border:1px solid #7A991A;
+        width:200px;
+        text-align:center;
+    }
 
-div.img
-{
-    border:1px solid #7A991A;
-    width:200px;
-    text-align:center;
-}
-
-div.img img
-{
-    display:inline;
-    margin:5px;
-    border:1px solid #ffffff;
-}
+    div.img img
+    {
+        display:inline;
+        margin:5px;
+        border:1px solid #ffffff;
+    }
 
 } /* Narrow */
 
 @media only screen and (min-width: 481px) and (max-width: 960px) {
 
     nav {
-  display: -webkit-flex;
-  -webkit-flex-direction: row;
-  -webkit-justify-content: space-between;
-}
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
 
 } /* Medium */
 
-@media only screen and (min-width: 961px) { 
+@media only screen and (min-width: 961px) {
 
 
 
@@ -82,47 +72,45 @@ div.img img
 } /* Wide */
 
 section {
-  display: -webkit-flex;
-  -webkit-flex-wrap: wrap;
-  -webkit-align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
 }
 
 article {
-    
-  display: -webkit-flex;
-  margin: 10px;
-  -webkit-align-items: start;
+
+    display: flex;
+    margin: 10px;
+    align-items: start;
 }
 
 .articleProduct {
-   -webkit-order: 0;
-   width:2000px;
-  margin: 10px;
-    display: -webkit-flex;
-    -webkit-justify-content: space-around;
+    order: 0;
+    width:2000px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-around;
 }
 
 article:nth-child(odd) {
-  -webkit-flex-direction: row;
+    flex-direction: row;
 }
 article:nth-child(even) {
-  -webkit-flex-direction: row;
+    flex-direction: row;
 }
 body{
     background-image: url("../img/imgFond.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: top right;
-	background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top right;
+    background-attachment: fixed;
 }
 
 .wrapper {
-    
-  display: -webkit-flex;
-  -webkit-flex-direction: column;
+
+    display: flex;
+    flex-direction: column;
 }
-
-
 
 #main {
     float:left;
@@ -141,34 +129,34 @@ footer {
 
 
 a{
-  color:  #FFFFFF;
+    color:  #FFFFFF;
 }
 
 a:hover{
-  color:  #7A991A;
+    color:  #7A991A;
 }
 header {
-    
-    -webkit-order: 0;
-    display: -webkit-flex;
-    -webkit-justify-content: space-around;
-  
+
+    order: 0;
+    display: flex;
+    justify-content: space-around;
+
 }
 
 footer {
-    
-    -webkit-order: 999;
-    display: -webkit-flex;
-    -webkit-justify-content: space-around;
-  
+
+    order: 999;
+    display: flex;
+    justify-content: space-around;
+
 }
 
 .nav{
 
-    -webkit-order: 0;
-    display: -webkit-flex;
-    -webkit-justify-content: space-around;
-  
+    order: 0;
+    display: flex;
+    justify-content: space-around;
+
 }
 .nav ul{
     text-align:center;
@@ -232,5 +220,5 @@ div.desc
 {
     text-align:center;
     font-weight:normal;
-   
+
 }
