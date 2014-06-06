@@ -36,7 +36,7 @@ class DatabaseConnection {
     public static function openDatabase($serverHostname, $username, $password, $databaseName) {
         $mysqli = new \mysqli($serverHostname, $username, $password, $databaseName);
         if($mysqli->connect_errno) {
-            throw new Exception('Cannot open database errno=' . $mysqli->connect_errno . ' error=' . $mysqli->connect_error);
+            throw new \Exception('Cannot open database errno=' . $mysqli->connect_errno . ' error=' . $mysqli->connect_error);
         }
         DatabaseConnection::$databaseConnection = $mysqli;
     }

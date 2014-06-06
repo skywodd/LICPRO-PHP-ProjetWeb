@@ -20,6 +20,7 @@ Options -Indexes
 ## URL rewrite rules for user-friendly url
 ##
 RewriteEngine On
+RewriteBase /~fabatteix/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . index.php
